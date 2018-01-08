@@ -6,7 +6,7 @@
          *@desc to store album information
          *@type {Object}
          */
-         
+
          var currentAlbum = Fixtures.getAlbum();
          /**
         *@desc Buzz object audio file
@@ -24,28 +24,27 @@
          if (currentBuzzObject) {
          currentBuzzObject.stop();
          SongPlayer.currentSong.playing = null;
-    }
-
-         /**
-         *@function playSong
-         *@desc Plays current song and set the playing property to true
-         *@param song
-         **/
-
-         var playSong = function(song){
-           if(currentBuzzObject){
-             currentBuzzObject.play();
-             song.playing = true;
-           }
-         }
-
+        }
         currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
         preload: true
       });
 
-    SongPlayer.currentSong = song;
- };
+       SongPlayer.currentSong = song;
+       };
+
+       /**
+      *@function playSong
+      *@desc Plays current song and set the playing property to true
+      *@param song
+       **/
+
+       var playSong = function(song){
+       if(currentBuzzObject){
+       currentBuzzObject.play();
+       song.playing = true;
+       }
+     };
 
      var getSongIndex = function(song){
        return currentAlbum.songs.indexOf(song);
