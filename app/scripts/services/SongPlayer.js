@@ -6,7 +6,7 @@
          *@desc to store album information
          *@type {Object}
          */
-         
+
          var currentAlbum = Fixtures.getAlbum();
          /**
         *@desc Buzz object audio file
@@ -101,14 +101,41 @@
      currentSongIndex--;
 
      if (currentSongIndex < 0) {
-         currentBuzzObject.stop();
-         SongPlayer.currentSong.playing = null;
+        stopSong(song);
      }else {
          var song = currentAlbum.songs[currentSongIndex];
          setSong(song);
          playSong(song);
        }
      };
+
+     /**
+    *@function  next
+    *@desc move to next song
+
+    **/
+
+     SongPlayer.next = function() {
+     var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+     currentSongIndex++;
+
+     if (currentSongIndex > currentSongIndex.length) {
+          stopSong();
+     }else {
+         var song = currentAlbum.songs[currentSongIndex];
+         setSong(song);
+         playSong(song);
+       }
+     };
+
+     var stopSong = function(){
+
+           currentBuzzObject.stop();
+           SongPlayer.currentSong.playing = null;
+
+         };
+
+
          return SongPlayer;
     }
 
