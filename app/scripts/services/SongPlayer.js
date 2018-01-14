@@ -24,7 +24,16 @@
          if (currentBuzzObject) {
          currentBuzzObject.stop();
          SongPlayer.currentSong.playing = null;
+<<<<<<< HEAD
         }
+=======
+    }
+
+
+
+
+
+>>>>>>> assignment8
         currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
         preload: true
@@ -45,6 +54,18 @@
        song.playing = true;
        }
      };
+
+      /**@function playSong
+      *@desc Plays current song and set the playing property to true
+      *@param songs
+      **/
+
+      var playSong = function(song){
+      if(currentBuzzObject){
+      currentBuzzObject.play();
+      song.playing = true;
+         }
+       };
 
      var getSongIndex = function(song){
        return currentAlbum.songs.indexOf(song);

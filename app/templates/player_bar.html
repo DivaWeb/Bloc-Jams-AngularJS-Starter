@@ -21,17 +21,17 @@
                </span>
              </a>
          </div>
-         <div class="control-group currently-playing">
-             <h2 class="song-name">{{album.albumData.title}}</h2>
-             <h2 class="artist-song-mobile"></h2>
+         <div class="control-group currently-playing" >
+             <h2 class="song-name">{{playerBar.songPlayer.currentSong.title}}</h2>
+             <h2 class="artist-song-mobile">{{mobile-view}}</h2>
              <h3 class="artist-name">{{album.albumData.artist}}</h3>
              <div class="seek-control">
                  <div class="seek-bar">
                      <div class="fill"></div>
                      <div class="thumb"></div>
                  </div>
-                 <div class="current-time"></div>
-                 <div class="total-time">{{album.albumData.songs.duration}}</div>
+                 <div class="current-time">{{}}</div>
+                 <div class="total-time">{{playerBar.songPlayer.currentSong.duration}}</div>
              </div>
          </div>
          <div class="control-group volume">
