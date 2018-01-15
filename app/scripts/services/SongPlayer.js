@@ -24,16 +24,7 @@
          if (currentBuzzObject) {
          currentBuzzObject.stop();
          SongPlayer.currentSong.playing = null;
-<<<<<<< HEAD
         }
-=======
-    }
-
-
-
-
-
->>>>>>> assignment8
         currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
         preload: true
