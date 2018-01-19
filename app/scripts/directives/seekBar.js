@@ -32,6 +32,13 @@
           return {width: percentString()};
         };
 
+<<<<<<< HEAD
+=======
+        scope.thumbStyle = function() {
+          return {left: percentString()};
+        };
+
+>>>>>>> checkpointdirectivesassignment1
         scope.onClickSeekBar = function(event) {
           var percent = calculatePercent(seekBar, event);
           scope.value = percent * scope.max;
