@@ -17,7 +17,7 @@
       scope: { },
       link: function(scope, element, attributes){
         scope.value = 0;
-        scope.value = 100;
+        scope.max = 100;
 
         var seekBar = $(element);
 
