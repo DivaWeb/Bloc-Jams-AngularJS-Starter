@@ -1,5 +1,5 @@
 (function(){
-  function seekBar(){
+  function seekBar($document){
 
     var calculatePercent = function(seekBar, event) {
       var offsetX = event.pageX - seekBar.offset().left;
@@ -64,7 +64,7 @@
 
          $document.bind('mouseup.thumb', function(){
                     $document.unbind('mousemove.thumb');
-                    $document.unbind(mouseup.thumb);
+                    $document.unbind('mouseup.thumb');
                     });
               };
 
