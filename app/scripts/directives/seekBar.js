@@ -62,20 +62,33 @@
 
                   });
 
+<<<<<<< HEAD
+=======
+
+
+               $document.bind('mouseup.thumb', function(){
+                    $document.unbind('mousemove.thumb');
+                    $document.unbind(mouseup.thumb);
+                    });
+              };
+
+>>>>>>> directivescheckpoint2
                 var notifyOnChange = function(newValue){
                     if(typeof scope.onChange === 'function') {
                       scope.onChange({value: newValue});
                     }
                 };
+<<<<<<< HEAD
 
 
         $document.bind('mouseup.thumb', function(){
           $document.unbind('mousemove.thumb');
           $document.unbind(mouseup.thumb);
         });
+=======
+           }
+>>>>>>> directivescheckpoint2
       };
-            }
-    };
 
   }
 

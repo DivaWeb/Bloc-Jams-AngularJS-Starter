@@ -25,16 +25,26 @@
          currentBuzzObject.stop();
          SongPlayer.currentSong.playing = null;
         }
+
         currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
         preload: true
       });
 
+
+
       currentBuzzObject.bind('timeupdate', function(){
         $rootScope.$apply(function(){
           SongPlayer.currentTime = currentBuzzObject.getTime();
         });
-      });
+
+       });
+
+         currentBuzzObject.bind('volumechange', function() {
+                $rootScope.$apply(function() {
+                    SongPlayer.volume = currentBuzzObject.getVolume();
+                });
+            });
 
        SongPlayer.currentSong = song;
        };
@@ -161,6 +171,18 @@
        if (currentBuzzObject)  {
          currentBuzzObject.setTime(time);
        }
+     };
+
+     /**
+     *@function setVolume
+     *@desc set volume
+     *@param {volume}
+     */
+
+     SongPlayer.setVolume = function(volume){
+       
+         currentBuzzObject.setVolume(volume);
+
      };
      var stopSong = function(){
 
